@@ -10,11 +10,23 @@ var users = require('./routes/users');
 
 var app = express();
 
-//var ejs = require('ejs');
+var bookRouter = express.Router();
 
 // view engine setup ( 'html' works )
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); 
+
+bookRouter.route('/').get(
+  function(req, res) {
+    res.send('Hello Books');
+  }
+);
+bookRouter.route('/single').get(
+  function(req, res) {
+    res.send('Hello Single');
+  }
+);
+app.use('/Books', bookRouter);
 
 // uncomment after placing your favicon in /public
 // app.user works as middleware
