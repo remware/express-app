@@ -10,23 +10,24 @@ var users = require('./routes/users');
 
 var app = express();
 
-var bookRouter = express.Router();
+var nav= [
+  {
+    Link: '/Movies',
+    Text: 'Movies'  
+  }, 
+  { Link: '/Directors',
+     Text: 'Directors'
+  }];
+var moviesRouter = require('./routes/moviesRoutes')(nav);
 
 // view engine setup ( 'html' works )
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); 
 
-bookRouter.route('/').get(
-  function(req, res) {
-    res.send('Hello Books');
-  }
-);
-bookRouter.route('/single').get(
-  function(req, res) {
-    res.send('Hello Single');
-  }
-);
-app.use('/Books', bookRouter);
+
+
+//movies router on own js
+app.use('/Movies', moviesRouter);
 
 // uncomment after placing your favicon in /public
 // app.user works as middleware
@@ -37,10 +38,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', function(req, res) {
   res.render('index', { title: 'in EJS', 
-                        nav: [{Link: '/Books', Text: 'Books'}, 
-                              {Link:'Authors', Text:'Authors'}]});
+                        nav: nav});
 });
 
 app.use('/users', users);
