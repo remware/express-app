@@ -10,6 +10,20 @@ var users = require('./routes/users');
 
 var app = express();
 
+var sql = require('mssql');
+var config = {
+  user: 'movies',
+  password: 'pluralrem1!',
+  server: 'remzure.database.windows.net',
+  database: 'Movies',
+  options: {
+    encrypt: true
+  }
+};
+sql.connect(config, function(err) {
+  console.log(err);
+});
+
 var nav= [
   {
     Link: '/Movies',
@@ -18,6 +32,7 @@ var nav= [
   { Link: '/Directors',
      Text: 'Directors'
   }];
+
 var moviesRouter = require('./routes/moviesRoutes')(nav);
 
 // view engine setup ( 'html' works )
