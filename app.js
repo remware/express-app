@@ -20,9 +20,13 @@ var config = {
     encrypt: true
   }
 };
-sql.connect(config, function(err) {
-  console.log(err);
-});
+//sql.connect(config, function(err) {
+//  console.log(err);
+//});
+
+// view engine setup ( 'html' works )
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); 
 
 var nav= [
   {
@@ -34,15 +38,11 @@ var nav= [
   }];
 
 var moviesRouter = require('./routes/moviesRoutes')(nav);
+var adminRouter = require('./routes/adminRoutes')(nav);
 
-// view engine setup ( 'html' works )
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs'); 
-
-
-
-//movies router on own js
+// funtional routes on own js
 app.use('/Movies', moviesRouter);
+app.use('/Admin', adminRouter );
 
 // uncomment after placing your favicon in /public
 // app.user works as middleware

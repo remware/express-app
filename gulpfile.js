@@ -25,12 +25,12 @@ gulp.task('inject', function() {
                     bowerJson: require('./bower.json'),
                     directory: './public/lib',
                     ignorePath: '../public'
-                  }
+                  };
 
     return gulp.src('./views/*.html')
     .pipe(wiredep(options))
     .pipe(inject(injectSrc, injectOptions))
-    .pipe(gulp.dest('./views'))
+    .pipe(gulp.dest('./views'));
 });
 
 gulp.task('serve',  ['style', 'inject'], function() {
@@ -41,10 +41,10 @@ gulp.task('serve',  ['style', 'inject'], function() {
             'PORT': 5000
         },
         watch: jsFiles
-    }
+    };
 
      return nodemon(options).on('restart', function(ev) {
-            console.log('Restarting...')
-      })    
+            console.log('Restarting...');
+      }) ;
 
 });
