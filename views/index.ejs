@@ -38,6 +38,25 @@
       </div>
     </header>
     <h3> <%= title %></h3>
-    
+    <div class="row"> 
+                <br>
+                <div class="col-md-2 col-sm3 text-center">
+                  Sing In
+                  <form name="signInForm" action="/Auth/signIn" method="post">
+                    <input name="userName" id="userName">
+                    <input name="password" id="password">
+                    <input type="submit" id="Sign In" value="Sign In">
+                  </form>
+                </div>
+                <div class="col-md-10 col-sm-3 text-center">
+                  Sign Up
+                  <form name="signupForm" action="/Auth/signUp" method="post">
+                    <input name="userName" id="userName">
+                    <input name="password" id="password">
+                    <input type="submit" id="Sign Up" value="Sign Up">
+                  </form>
+                </div>
+    </div>
+
   </body>
 </html>
