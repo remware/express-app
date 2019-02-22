@@ -29,6 +29,22 @@ var config = {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); 
 
+var elements = ["may", "cat", "amy"];
+// "student", "students", "dog", "studentssess", "cat"
+
+function rearrange(elements, length) {
+  var uniqueElements = elements.map(function(word) {
+    var uniqueSet = word.split('').filter(function(el){
+      return el.indexOf(uniqueSet) > -1;
+    });
+    return uniqueSet;
+  });
+  
+  
+  return ``;
+}
+
+
 var nav= [
   {
     Link: '/Movies',
@@ -51,6 +67,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({secret: 'catalog', saveUninitialized: false, resave: false}));
 require('./config/passport')(app);
+
+app.disable('x-powered-by');
 
 // funtional routes on own js
 app.use('/Movies', moviesRouter);
