@@ -1,0 +1,48 @@
+{
+  "rules": {
+    "semi": [
+      2,
+      "always"
+    ],
+    "wrap-iife": 2,
+    "max-len": [
+      2,
+      120
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "indent": [
+      2,
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "no-unused-vars": [
+      2,
+      {
+        "vars": "local",
+        "args": "all"
+      }
+    ],
+    "no-implicit-coercion": [
+      2,
+      {
+        "boolean": false,
+        "string": true,
+        "number": false
+      }
+    ],
+    "consistent-this": [
+      2,
+      "_this"
+    ],
+    "valid-jsdoc": 2
+  }
+}
