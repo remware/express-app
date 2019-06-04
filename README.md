@@ -1,5 +1,5 @@
 # express-app
-Express Js as web app. Just npm start and open browser to localhost:3000
+Express Js as web app. Just npm start and open browser to localhost:8300
 
 
 # Technologies used
