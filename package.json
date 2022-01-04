@@ -10,7 +10,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "^2.5.7",
-    "express": "^4.16.2",
+    "express": "^4.17.2",
     "express-session": "^1.15.6",
     "mongodb": "^3.1.13",
     "morgan": "^1.9.1",
@@ -24,7 +24,7 @@
     "gulp": "^4.0.2",
     "gulp-inject": "^4.3.0",
     "gulp-jshint": "^2.0.4",
-    "gulp-nodemon": "^2.4.2",
+    "gulp-nodemon": "^2.5.0",
     "jshint": "^2.10.1",
     "jshint-stylish": "^2.2.1",
     "wiredep": "^4.0.0"
