@@ -22,8 +22,8 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "gulp": "^4.0.2",
-    "gulp-inject": "^4.3.0",
-    "gulp-jshint": "^2.0.4",
+    "gulp-inject": "^4.3.2",
+    "gulp-jshint": "^2.1.0",
     "gulp-nodemon": "^2.5.0",
     "jshint": "^2.13.5",
     "jshint-stylish": "^2.2.1",
